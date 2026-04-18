@@ -5,9 +5,9 @@ const { google } = require('googleapis');
 //  CONFIGURATION
 // ─────────────────────────────────────────────
 const CONFIG = {
-  DISCORD_TOKEN:      process.env.MTQ5NDgyNjA1NzM0NDM1NjM1Mg.G7hScI.CQ7zGaLCff1GrrPtGI23lcQutdoiBVND-pwaIQ,
-  CHANNEL_ID:         process.env.1495034418606375064,
-  SPREADSHEET_ID:     process.env.1NVOHJD0joNPZqgyTElnlUcfGiiL-H0fFJsJdG7SQ1hw,
+  DISCORD_TOKEN:      process.env.DISCORD_TOKEN,
+  CHANNEL_ID:         process.env.CHANNEL_ID,
+  SPREADSHEET_ID:     process.env.SPREADSHEET_ID,
   SHEET_NAME:         'Coffre',
   TARGET_POSITION:    { x: 1697.93, y: 4868.40, z: 42.10 },
   POSITION_TOLERANCE: 1.0,
