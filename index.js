@@ -15,7 +15,7 @@ const CONFIG = {
 // ─────────────────────────────────────────────
 
 async function getGoogleSheetsClient() {
-  const credentials = JSON.parse(require('fs').readFileSync('./google-credentials.json'));
+  const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS_JSON);
   const auth = new google.auth.GoogleAuth({
     credentials,
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
