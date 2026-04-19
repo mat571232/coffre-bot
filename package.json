@@ -1,17 +1,9 @@
 {
-  "name": "coffre-discord-bot",
+  "name": "suivi-run",
   "version": "1.0.0",
-  "description": "Bot Discord → Google Sheets pour le suivi du coffre GrapeSeed Pub",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
-  },
   "dependencies": {
-    "discord.js": "^14.15.3",
-    "googleapis": "^140.0.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.0"
+    "discord.js": "^14.0.0",
+    "node-fetch": "^2.6.7"
   }
 }
