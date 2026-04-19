@@ -13,18 +13,21 @@ client.on('messageCreate', async (message) => {
   if (message.channel.id !== CHANNEL_ID) return;
   if (!message.embeds.length) return;
 
-  for (const embed of message.embeds) {
+for (const embed of message.embeds) {
     const desc = embed.description || '';
-
-    if (!/vente de/i.test(desc)) continue;
-
+    console.log(`Description embed : ${desc}`);
+    
+    if (!/vente de/i.test(desc)) { console.log('pas de vente détectée'); continue; }
+    
     const qte     = desc.match(/vente de (\d+)x/i);
     const vendeur = desc.match(/par\s+(\w+\s+\w+|\w+)/i);
     const total   = desc.match(/pour\s+(\d+)\$/i);
     const societe = desc.match(/(\d+)\$\s+pour\s+la\s+soci[ée]t[ée]/i);
-
-    if (!qte || !vendeur || !total || !societe) continue;
-
+    
+    console.log(`qte: ${qte}, vendeur: ${vendeur}, total: ${total}, societe: ${societe}`);
+    
+    if (!qte || !vendeur || !total || !societe) { console.log('regex raté'); continue; }
+    
     await fetch(WEBHOOK, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -35,7 +38,6 @@ client.on('messageCreate', async (message) => {
         societe:    parseInt(societe[1]),
       })
     });
-
     await message.react('✅');
   }
 });
