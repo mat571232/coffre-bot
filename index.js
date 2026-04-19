@@ -38,5 +38,7 @@ client.on('messageCreate', async (message) => {
     await message.react('✅');
   }
 });
-
+client.on('ready', () => {
+  console.log(`Connecté en tant que ${client.user.tag}`);
+});
 client.login(process.env.DISCORD_TOKEN);
