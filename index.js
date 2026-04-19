@@ -9,6 +9,7 @@ const WEBHOOK = process.env.SHEETS_WEBHOOK_RUN;
 const CHANNEL_ID = process.env.CHANNEL_ID_RUN;
 
 client.on('messageCreate', async (message) => {
+  console.log(`Message reçu dans le salon : ${message.channel.id}`);
   if (message.channel.id !== CHANNEL_ID) return;
   if (!message.embeds.length) return;
 
